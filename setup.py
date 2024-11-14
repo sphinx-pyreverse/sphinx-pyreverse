@@ -49,6 +49,7 @@ setup(
             "docutils",
             "flake8",
             "isort==5.8.0",
+            "pylint>=3.3.1",
             "pytest",
             "pytest-cov",
             "sphinx==4.5.0",

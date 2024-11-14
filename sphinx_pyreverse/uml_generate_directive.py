@@ -167,13 +167,16 @@ class UMLGenerateDirective(Directive):
         )
         scale = config.sphinx_pyreverse_image_scale
         max_width = config.sphinx_pyreverse_image_max_width
-        if IMAGE:
-            i = IMAGE.open(output_file)
-            image_width = i.size[0]
-            if image_width * scale > max_width:
-                scale = max_width / image_width
-        else:
-            logging.getLogger(__name__).warning(
-                "sphinx-pyreverse: No image manipulation lib found!"
-            )
+        if Path(output_file).suffix != ".svg":
+            # We're not rendering an svg, so ensure the scale of the image fits
+            # inside the view.
+            if IMAGE:
+                i = IMAGE.open(output_file)
+                image_width = i.size[0]
+                if image_width * scale > max_width:
+                    scale = max_width / image_width
+            else:
+                logging.getLogger(__name__).warning(
+                    "sphinx-pyreverse: No image manipulation lib found!"
+                )
         return nodes.image(uri=str(uri), scale=scale * 100)

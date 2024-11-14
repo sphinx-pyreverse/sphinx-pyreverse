@@ -69,10 +69,10 @@ class TestUMLGenerateDirectiveBase:
         ) as mocksub:
             yield mocksub
 
-    def gen(self):
+    def gen(self, output_ext=None):
         """Constructs and returns a mocked UMLGenerateDirective instance"""
 
-        state = MockState()
+        state = MockState(output_ext)
         state_machine = MockStateMachine()
 
         return sphinx_pyreverse.UMLGenerateDirective(
@@ -235,10 +235,20 @@ class TestUMLGenerateDirective(TestUMLGenerateDirectiveBase):
                 ), f"Failed for {width_under_test}"
 
     def test_generate_img_no_pil(self):
-        """ensure we handle not have the PIL library gracefully
+        """ensure we handle not having the PIL library gracefully
 
         The intent is to resize too-wide files"""
         instance = self.gen()
+        old_image = sphinx_pyreverse.uml_generate_directive.IMAGE
+        sphinx_pyreverse.uml_generate_directive.IMAGE = None
+        instance.run()
+        sphinx_pyreverse.uml_generate_directive.IMAGE = old_image
+
+    def test_generate_img_svg(self):
+        """ensure we handle not having the PIL library gracefully
+
+        The intent is to resize too-wide files"""
+        instance = self.gen(output_ext="svg")
         old_image = sphinx_pyreverse.uml_generate_directive.IMAGE
         sphinx_pyreverse.uml_generate_directive.IMAGE = None
         instance.run()

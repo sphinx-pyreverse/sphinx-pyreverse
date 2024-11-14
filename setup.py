@@ -55,6 +55,7 @@ setup(
             "pytest",
             "pytest-cov",
             "sphinx>=8.1.3",
+            "sphinx-rtd-theme>=3.0.1",
         ],
     },
     install_requires=[

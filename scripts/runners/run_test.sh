@@ -9,6 +9,14 @@ printf "with find...\\n"
 PYTHON_FILES=$(find "$(pwd)" -iname "*.py" -not -ipath "$(pwd)/*env/*" -not -ipath "$(pwd)/build/*"  -not -ipath "$(pwd)/.rope*/*" -print)
 printf "    %s python files found/changed.\\n" "$(echo "$PYTHON_FILES" | wc -l)"
 
+CMD_BLACK="python3 -m black $PYTHON_FILES"
+printf "%s\\n" "$CMD_BLACK"
+$CMD_BLACK #2>&1 | sed -e 's/^/PYTEST: /g'
+EXIT_CODE=$?
+if [ $EXIT_CODE -ne 0 ]; then
+	exit $EXIT_CODE
+fi
+
 # Runs the unit-tests and the code coverage at the same-time
 CMD_PYTEST="python3 -m pytest --cov=. --cov-config="$(pwd)"/.coveragerc --cov-fail-under=100 -c "$(pwd)"/unittest.cfg --failed-first --exitfirst $(pwd)/test/"
 printf "%s\\n" "$CMD_PYTEST"

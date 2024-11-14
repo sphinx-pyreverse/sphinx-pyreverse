@@ -5,6 +5,7 @@ Created on Oct 8, 2019
 
 @author: doublethefish
 """
+
 import sys
 import types
 from unittest.mock import Mock
@@ -16,7 +17,7 @@ sys.modules[PIL_MODULE_NAME] = PIL_MOCK
 _DIMS_UNDER_TEST = (0, 0)
 
 
-class DimsUnderTestGuard(object):
+class DimsUnderTestGuard:
     """Changes the width to use in tests"""
 
     def __init__(self, width=0, height=0):
@@ -42,7 +43,7 @@ class DimsUnderTestGuard(object):
 def _open(_):
     """returns a dummy image with a size parameter"""
 
-    class MockImage(object):
+    class MockImage:  # pylint: disable=too-few-public-methods
         """A MockImage with a mock size"""
 
         __slots__ = ("size",)

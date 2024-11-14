@@ -7,7 +7,7 @@ Created on 22, 2020
 """
 
 
-class MockConfig(object):  # pylint: disable=missing-docstring
+class MockConfig:  # pylint: disable=missing-docstring,too-few-public-methods
     def __init__(self):  # pylint: disable=missing-docstring
         self.sphinx_pyreverse_output = "png"
         self.sphinx_pyreverse_filter_mode = None
@@ -25,23 +25,23 @@ class MockConfig(object):  # pylint: disable=missing-docstring
         self.sphinx_pyreverse_colorized = None
 
 
-class MockEnv(object):  # pylint: disable=missing-docstring
+class MockEnv:  # pylint: disable=missing-docstring,too-few-public-methods
     def __init__(self):  # pylint: disable=missing-docstring
         self.srcdir = "."
         self.config = MockConfig()
 
 
-class MockDocSettings(object):  # pylint: disable=missing-docstring
+class MockDocSettings:  # pylint: disable=missing-docstring,too-few-public-methods
     def __init__(self):  # pylint: disable=missing-docstring
         self.env = MockEnv()
 
 
-class MockDoc(object):  # pylint: disable=missing-docstring
+class MockDoc:  # pylint: disable=missing-docstring,too-few-public-methods
     def __init__(self):  # pylint: disable=missing-docstring
         self.settings = MockDocSettings()
         self.current_source = "."
 
 
-class MockState(object):  # pylint: disable=missing-docstring
+class MockState:  # pylint: disable=missing-docstring,too-few-public-methods
     def __init__(self):  # pylint: disable=missing-docstring
         self.document = MockDoc()

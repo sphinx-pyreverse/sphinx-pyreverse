@@ -3,6 +3,7 @@ Created on Oct 1, 2012
 
 @author: alendit
 """
+
 import os
 
 __all__ = ["UMLGenerateDirective"]
@@ -28,7 +29,8 @@ def setup(app):
     )
     app.add_config_value("sphinx_pyreverse_ignore", default=None, rebuild="env")
     app.add_config_value(
-        "sphinx_pyreverse_image_max_width", default=1000, rebuild="env")
+        "sphinx_pyreverse_image_max_width", default=1000, rebuild="env"
+    )
     app.add_config_value("sphinx_pyreverse_image_scale", default=1.0, rebuild="env")
     app.add_config_value("sphinx_pyreverse_colorized", default=None, rebuild="env")
 

@@ -11,7 +11,9 @@ from setuptools import setup
 
 def read(fname):
     """Reads a file in from disk and returns its contents"""
-    with open(os.path.join(os.path.dirname(__file__), fname), "r") as file_handle:
+    with open(
+        os.path.join(os.path.dirname(__file__), fname), "r", encoding="utf-8"
+    ) as file_handle:
         return file_handle.read()
 
 
@@ -45,10 +47,11 @@ setup(
             "pillow",
         ],
         "tests": [
-            "black==21.6b0",
+            "black==24.10.0",
             "docutils",
             "flake8",
             "isort==5.8.0",
+            "pylint>=3.3.1",
             "pytest",
             "pytest-cov",
             "sphinx==4.5.0",

@@ -1,7 +1,7 @@
 Sphinx-pyreverse
 =================
 
-.. image:: https://sphinx-pyreverse.github.io/sphinx-pyreverse/VIEW-DOCS-31c553.svg
+.. image:: https://sphinx-pyreverse.github.io/sphinx-pyreverse/badges/VIEW-DOCS-31c553.svg
    :target: https://sphinx-pyreverse.github.io/sphinx-pyreverse/
    :alt: DOCS
 

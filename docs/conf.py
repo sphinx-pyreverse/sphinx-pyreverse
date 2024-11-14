@@ -243,3 +243,9 @@ texinfo_documents = [
 
 # How to display URL addresses: 'footnote', 'no', or 'inline'.
 # texinfo_show_urls = 'footnote'
+
+
+# sphinx-pyreverse switches
+sphinx_pyreverse_colorized = True  # colour the graphs
+sphinx_pyreverse_all_ancestors = True # give more Sphinx context
+sphinx_pyreverse_all_associated = True

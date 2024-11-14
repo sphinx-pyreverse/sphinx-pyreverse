@@ -45,8 +45,8 @@ source_suffix = ".rst"
 master_doc = "index"
 
 # General information about the project.
-project = u"test"
-copyright = u"2012, test"
+project = "test"
+copyright = "2012, test"
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -185,7 +185,7 @@ latex_elements = {
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
-latex_documents = [("index", "test.tex", u"test Documentation", u"test", "manual")]
+latex_documents = [("index", "test.tex", "test Documentation", "test", "manual")]
 
 # The name of an image file (relative to this directory) to place at the top of
 # the title page.
@@ -212,7 +212,7 @@ latex_documents = [("index", "test.tex", u"test Documentation", u"test", "manual
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages = [("index", "test", u"test Documentation", [u"test"], 1)]
+man_pages = [("index", "test", "test Documentation", ["test"], 1)]
 
 # If true, show URL addresses after external links.
 # man_show_urls = False
@@ -227,8 +227,8 @@ texinfo_documents = [
     (
         "index",
         "test",
-        u"test Documentation",
-        u"test",
+        "test Documentation",
+        "test",
         "test",
         "One line description of project.",
         "Miscellaneous",

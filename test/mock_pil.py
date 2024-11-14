@@ -5,6 +5,7 @@ Created on Oct 8, 2019
 
 @author: doublethefish
 """
+
 import sys
 import types
 from unittest.mock import Mock

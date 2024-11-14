@@ -156,9 +156,7 @@ class UMLGenerateDirective(Directive):
         )
         # use relpath to get sub-directory of the main 'source' location
         src_base = Path(os.path.relpath(base_dir, start=src_dir))
-        uri = directives.uri(
-            str((src_base / path_from_base).as_posix())
-        )
+        uri = directives.uri(str((src_base / path_from_base).as_posix()))
         output_file = base_dir / path_from_base
         return (Path(uri), output_file)
 

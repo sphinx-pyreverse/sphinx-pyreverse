@@ -11,7 +11,9 @@ from setuptools import setup
 
 def read(fname):
     """Reads a file in from disk and returns its contents"""
-    with open(os.path.join(os.path.dirname(__file__), fname), "r") as file_handle:
+    with open(
+        os.path.join(os.path.dirname(__file__), fname), "r", encoding="utf-8"
+    ) as file_handle:
         return file_handle.read()
 
 

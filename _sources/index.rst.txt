@@ -3,21 +3,16 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to test's documentation!
-================================
+Welcome to sphinx-pyreverse's documentation!
+============================================
 
 .. include::
 	../README.rst
 
 .. toctree::
    :maxdepth: 2
-   
+   :caption: Contents:
+   :glob:
 
-Example
---------
-
-UML diagram of sphinx-pyreverse.py
-
-.. uml:: sphinx_pyreverse
-   :classes:
-	
+   examples
+   source/*

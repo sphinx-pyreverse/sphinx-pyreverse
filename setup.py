@@ -54,7 +54,7 @@ setup(
             "pylint>=3.3.1",
             "pytest",
             "pytest-cov",
-            "sphinx==4.5.0",
+            "sphinx>=8.1.3",
         ],
     },
     install_requires=[

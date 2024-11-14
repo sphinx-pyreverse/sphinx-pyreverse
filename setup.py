@@ -45,7 +45,7 @@ setup(
             "pillow",
         ],
         "tests": [
-            "black==21.6b0",
+            "black==24.10.0",
             "docutils",
             "flake8",
             "isort==5.8.0",

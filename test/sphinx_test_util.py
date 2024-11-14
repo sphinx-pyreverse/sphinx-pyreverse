@@ -45,3 +45,8 @@ class MockDoc:  # pylint: disable=missing-docstring,too-few-public-methods
 class MockState:  # pylint: disable=missing-docstring,too-few-public-methods
     def __init__(self):  # pylint: disable=missing-docstring
         self.document = MockDoc()
+
+
+class MockStateMachine:  # pylint: disable=missing-docstring,too-few-public-methods
+    def __init__(self):  # pylint: disable=missing-docstring
+        self.reporter = None

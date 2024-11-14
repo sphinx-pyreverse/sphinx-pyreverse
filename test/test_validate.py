@@ -13,7 +13,7 @@ import sys
 import test.mock_pil
 from io import StringIO
 from pathlib import Path
-from test.sphinx_test_util import MockState
+from test.sphinx_test_util import MockState, MockStateMachine
 from unittest import mock
 
 import pytest
@@ -73,6 +73,7 @@ class TestUMLGenerateDirectiveBase:
         """Constructs and returns a mocked UMLGenerateDirective instance"""
 
         state = MockState()
+        state_machine = MockStateMachine()
 
         return sphinx_pyreverse.UMLGenerateDirective(
             name="test",
@@ -83,7 +84,7 @@ class TestUMLGenerateDirectiveBase:
             content_offset=None,
             block_text=None,
             state=state,
-            state_machine=None,
+            state_machine=state_machine,
         )
 
 
@@ -349,7 +350,7 @@ def test_module_paths(module_address):
         content_offset=None,
         block_text=None,
         state=state,
-        state_machine=None,
+        state_machine=MockStateMachine(),
     )
 
     doc = obj.state.document
